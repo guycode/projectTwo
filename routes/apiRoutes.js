@@ -2,11 +2,15 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+
+    // GET route for getting all of the tasks
+    app.get("/api/tasks", function(req, res) {
+      // findAll returns all entries for a table when used with no options
+      db.tasks.findAll({}).then(function(dbTasks) {
+        // We have access to the tasks as an argument inside of the callback function
+        res.json(dbTasks);
+      });
     });
-  });
 
   // Create a new example
   app.post("/api/examples", function(req, res) {

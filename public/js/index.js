@@ -16,9 +16,9 @@ var API = {
       data: JSON.stringify(example)
     });
   },
-  getExamples: function() {
+  getTasks: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/tasks",
       type: "GET"
     });
   },

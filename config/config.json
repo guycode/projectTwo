@@ -2,9 +2,9 @@
   "development": {
     "username": "root",
     "password": "root",
-    "port": 3306,
+    "port": 8889,
     "database": "task_tracker",
-    "host": "localhost",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "define": {
         "timestamps": false

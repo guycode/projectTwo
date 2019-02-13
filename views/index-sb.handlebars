@@ -1,0 +1,48 @@
+<div id="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+                <a href="/api/tasks">app.get all the tasks</a>
+                <h1>{{msg}}</h1>
+                <hr>
+                <form class="clearfix mb-4" action="POST">
+                    <div class="form-group">
+                        <h2>Add task entry:</h2>
+                        <div class="form-group">
+                        <input type="text" id="task-date" class="form-control" aria-describedby="task-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="task-minutes">Minutes spent on task</label>
+                        <input type="text" id="task-minutes" class="form-control" aria-describedby="task-minutes">
+                        </div>
+                        <div class="form-group">
+                            <label for="task-category">Task Category</label>
+                            <select class="form-control" id="task-category">
+                                <option value="homework" selected>Homework</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-goal">Goal for this task (in minutes)</label>
+                        <input class="form-control" id="task-goal" aria-describedby="task-goal">
+                    </div>
+                    <button id="submit" class="btn btn-primary float-right">Submit</button>
+                </form>
+                <h3>Current time entries:</h3>
+                <ul id="task-list" class="list-group">
+                    {{#each tasks}}
+                    <li data-id="{{this.id}}">
+                        Date: {{this.task_date}}<br>
+                        Minutes: {{this.task_minutes}}<br>
+                        Category: {{this.task_category}}<br>
+                        Goal: {{this.task_goal}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>

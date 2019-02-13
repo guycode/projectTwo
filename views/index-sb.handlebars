@@ -1,48 +1,84 @@
 <div id="home">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-3">
-                <a href="/api/tasks">app.get all the tasks</a>
-                <h1>{{msg}}</h1>
-                <hr>
-                <form class="clearfix mb-4" action="POST">
-                    <div class="form-group">
-                        <h2>Add task entry:</h2>
-                        <div class="form-group">
-                        <input type="text" id="task-date" class="form-control" aria-describedby="task-date">
-                        </div>
-                        <div class="form-group">
-                            <label for="task-minutes">Minutes spent on task</label>
-                        <input type="text" id="task-minutes" class="form-control" aria-describedby="task-minutes">
-                        </div>
-                        <div class="form-group">
-                            <label for="task-category">Task Category</label>
-                            <select class="form-control" id="task-category">
-                                <option value="homework" selected>Homework</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="task-goal">Goal for this task (in minutes)</label>
-                        <input class="form-control" id="task-goal" aria-describedby="task-goal">
-                    </div>
-                    <button id="submit" class="btn btn-primary float-right">Submit</button>
-                </form>
-                <h3>Current time entries:</h3>
-                <ul id="task-list" class="list-group">
-                    {{#each tasks}}
-                    <li data-id="{{this.id}}">
-                        Date: {{this.task_date}}<br>
-                        Minutes: {{this.task_minutes}}<br>
-                        Category: {{this.task_category}}<br>
-                        Goal: {{this.task_goal}}
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
+  <!--Nav bar -->
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    <a class="navbar-brand mr-1" href="index.handlebars">Time Tracker Pro</a>
+  </nav>
+
+  <div class="container">
+          <div class="row">
+      <div class="col">
+        <div id="chart-container">
+          <canvas id="mycanvas"></canvas>
         </div>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-md-6 offset-3">
+        {{!-- <a href="/api/tasks">app.get all the tasks</a> --}}
+        {{!-- <h1>{{msg}}</h1> --}}
+        <hr>
+        <form class="clearfix mb-4" action="POST">
+          <div class="form-group">
+            <h2>Add task entry:</h2>
+            <div class="form-group">
+              <input type="text" id="task-date" class="form-control" aria-describedby="task-date" hidden>
+            </div>
+            <div class="form-group">
+              <label for="task-minutes">Minutes spent on task</label>
+              <input type="text" id="task-minutes" class="form-control" aria-describedby="task-minutes">
+            </div>
+            <div class="form-group">
+              <label for="task-category">Task Category</label>
+              <select class="form-control" id="task-category">
+                <option value="homework" selected>Homework</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="task-goal">Goal for this task (in minutes)</label>
+            <input class="form-control" id="task-goal" aria-describedby="task-goal">
+          </div>
+          <button id="submit" class="btn btn-primary float-right">Submit</button>
+        </form>
+        <h3>Current time entries:</h3>
+        <ul id="task-list" class="list-group">
+          {{#each tasks}}
+          <li data-id="{{this.id}}">
+            Date: {{this.task_date}}<br>
+            Minutes: {{this.task_minutes}}<br>
+            Category: {{this.task_category}}<br>
+            Goal: {{this.task_goal}}
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/chart-sb.js"></script>
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Page level plugin JavaScript-->
+<script src="vendor/chart.js/Chart.min.js"></script>
+<script src="vendor/datatables/jquery.dataTables.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin.min.js"></script>
+
+<!-- Demo scripts for this page-->
+<script src="js/demo/datatables-demo.js"></script>
+<script src="js/demo/chart-area-demo.js"></script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>

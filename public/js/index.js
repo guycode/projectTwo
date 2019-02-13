@@ -48,7 +48,7 @@ var refreshTasks = function () {
     API.getTasks().then(function (data) {
         var $tasks = data.map(function (task) {
             var $a = $("<a>")
-                .text(task.id)
+                .text(task.id + " " + task.task_date + " " +  task.task_minutes + " " +  task.task_goal)
                 .attr("href", "/task/" + task.id);
 
             var $li = $("<li>")

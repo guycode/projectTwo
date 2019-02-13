@@ -1,0 +1,14 @@
+a {
+    text-align: center;
+    width: 100%;
+    text-decoration-color: black;
+}
+
+.container {
+    max-width: 100%;
+    background-color: #eae7dc;
+}
+
+.row { 
+    max-width: 60%;
+}

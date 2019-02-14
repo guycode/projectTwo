@@ -4,6 +4,7 @@
     <a class="navbar-brand mr-1" href="index.handlebars">Time Tracker Pro</a>
   </nav>
 
+
   <div class="container">
           <div class="row">
       <div class="col">
@@ -11,13 +12,7 @@
           <canvas id="mycanvas"></canvas>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 offset-3">
-        {{!-- <a href="/api/tasks">app.get all the tasks</a> --}}
-        {{!-- <h1>{{msg}}</h1> --}}
-        <hr>
-        <form class="clearfix mb-4" action="POST">
+      <form class="clearfix mb-4" id="addOne" action="POST">
           <div class="form-group">
             <h2>Add task entry:</h2>
             <div class="form-group">
@@ -40,6 +35,13 @@
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-3">
+        {{!-- <a href="/api/tasks">app.get all the tasks</a> --}}
+        {{!-- <h1>{{msg}}</h1> --}}
+        <hr>
+        
         <h3>Current time entries:</h3>
         <ul id="task-list" class="list-group">
           {{#each tasks}}
@@ -51,6 +53,9 @@
           </li>
           {{/each}}
         </ul>
+
+
+        <div id="mydiv"></div>
       </div>
     </div>
   </div>

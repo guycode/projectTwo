@@ -17,7 +17,7 @@ $(document).ready(function () {
         labels: taskMinutesArr,
         datasets: [{
           label: 'Minutes',
-          backgroundColor: 'rgba(200, 200, 200, 0.75)',
+          backgroundColor: 'rgba(42, 212, 158, 0.75)',
           borderColor: 'rgba(200, 200, 200, 0.75)',
           hoverBackgroundColor: 'rgba(200, 200, 200, 1)',
           hoverBorderColor: 'rgba(200, 200, 200, 1)',

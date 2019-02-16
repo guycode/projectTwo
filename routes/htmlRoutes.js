@@ -4,7 +4,7 @@ module.exports = function (app) {
     // Load index page
       app.get("/", function(req, res) {
         db.tasks.findAll({}).then(function(dbTasks) {
-          res.render("index-sb", {
+          res.render("index", {
             msg: "Task Tracker App",
             tasks: dbTasks
           });

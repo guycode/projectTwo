@@ -9,8 +9,11 @@ a {
     background-color: #eae7dc;
 }
 
+/* Modifying bootstraps .col class will break responsive behavior. 
+Better to use column offsets to control width */
+
 .col { 
-    max-width: 60%;
+    /* max-width: 60%; */
 }
 
 #addOne {

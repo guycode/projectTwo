@@ -29,7 +29,9 @@ Better to use column offsets to control width */
     color: black;
 }
 
-
+#view-tasks {
+    color: #000000;
+}
 
 
 

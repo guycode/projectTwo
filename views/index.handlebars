@@ -13,10 +13,10 @@
                     <a class="nav-link active" data-toggle="tab" href="#home">Add Task</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#menu1">View Chart</a>
+                    <a class="nav-link" data-toggle="tab" href="#view-chart">View Chart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#menu2">View Task Entries</a>
+                    <a class="nav-link" data-toggle="tab" href="#view-tasks">View Task Entries</a>
                 </li>
             </ul>
             <!-- Tab panes -->
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane container fade" id="menu1">
+                <div class="tab-pane container fade" id="view-chart">
                     <div class="row">
                         <div class="col-md-10 offset-1">
                             <div id="chart-container">
@@ -61,18 +61,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane container fade" id="menu2">
-                    <h3>Current time entries:</h3>
-                    <ul id="task-list" class="list-group">
-                        {{#each tasks}}
-                        <li data-id="{{this.id}}">
-                            Date: {{this.task_date}}<br>
-                            Minutes: {{this.task_minutes}}<br>
-                            Category: {{this.task_category}}<br>
-                            Goal: {{this.task_goal}}
-                        </li>
-                        {{/each}}
-                    </ul>
+                <div class="tab-pane container fade" id="view-tasks">
+                    <div class="row">
+                        <div class="col-md-6 offset-3">
+                            <h3>Current time entries:</h3>
+                            <ul id="task-list" class="list-group">
+                                {{#each tasks}}
+                                <li data-id="{{this.id}}">
+                                    Date: {{this.task_date}}<br>
+                                    Minutes: {{this.task_minutes}}<br>
+                                    Category: {{this.task_category}}<br>
+                                    Goal: {{this.task_goal}}
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

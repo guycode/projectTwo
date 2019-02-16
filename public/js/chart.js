@@ -1,23 +1,39 @@
-function renderChart(data, labels) {
-    var ctx = document.getElementById("timeChart").getContext('2d');
-    var timeChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'This week',
-                data: data,
-            }]
-        },
+$(document).ready(function () {
+    $.ajax({
+      url: "http://localhost:3000/api/tasks",
+      method: "GET",
+      success: function (data) {
+        console.log(data);
+        var taskMinutesArr = [];
+        var taskGoalArr = [];
+  
+        for (var i in data) {
+          taskMinutesArr.push(data[i].task_minutes);
+          taskGoalArr.push(data[i].task_goal);
+        }
+        // console.log(taskMinutesArr);
+        // console.log(taskGoalArr);
+        var chartdata = {
+          labels: taskMinutesArr,
+          datasets: [{
+            label: 'Minutes',
+            backgroundColor: 'rgba(42, 212, 158, 0.75)',
+            borderColor: 'rgba(200, 200, 200, 0.75)',
+            hoverBackgroundColor: 'rgba(200, 200, 200, 1)',
+            hoverBorderColor: 'rgba(200, 200, 200, 1)',
+            data: taskMinutesArr
+          }]
+        };
+  
+        var ctx = $("#mycanvas");
+  
+        var barGraph = new Chart(ctx, {
+          type: 'bar',
+          data: chartdata
+        });
+      },
+      error: function (data) {
+        console.log(data);
+      }
     });
-}
-
-
-
-
-$("#renderBtn").click(
-    function () {
-        data = [0, 4, 10, 5, 16, 20, 9];
-        labels = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-        renderChart(data, labels);
-    })
+  });

@@ -6,7 +6,7 @@ a {
 
 .container {
     max-width: 100%;
-    background-color: #eae7dc;
+	background-color: #eae7dc;
 }
 
 /* Modifying bootstraps .col class will break responsive behavior. 
@@ -30,7 +30,7 @@ Better to use column offsets to control width */
 }
 
 #view-tasks {
-    color: #000000;
+    color: black;
 }
 
 
@@ -92,3 +92,47 @@ h6 {
 	right: 0;
 	left: 0;
 }
+/* stopwatch */
+.watch {
+	float: right;
+	padding-left: 20px;
+}
+ 
+ html {
+   background: #333;
+   color: #bbb;
+   font-family: Menlo;
+ }
+ 
+ .controls {
+   text-align: right;
+   padding-right: 20px;
+ } 
+ 
+ .button {
+   color: red;
+   font-size: 20px;
+   margin: 0 0.5em;
+   text-decoration: none;
+ }
+ 
+ .button:first-child {
+	 margin-left: 0;
+ }
+ 
+ .button:last-child {
+	 margin-right: 0;
+ }
+ 
+ .button:hover {
+   color: white;
+ }
+ 
+ .stopwatch {
+   padding-top: 10px;
+   font-size: 20px;
+   height: 20%;
+   line-height: 10px;
+   text-align: center;
+   color: red;
+ }
